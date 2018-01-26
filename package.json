@@ -1,0 +1,79 @@
+{
+  "name": "qc-react-conditionals",
+  "version": "0.0.0-alpha",
+  "description": "A set of React components that conditionally renders its child components.",
+  "keywords": [
+    "case",
+    "component",
+    "condition",
+    "conditionals",
+    "else",
+    "flow control",
+    "if",
+    "is",
+    "react",
+    "test",
+    "then",
+    "when"
+  ],
+  "author": {
+    "name": "Danny Hurlburt",
+    "url": "https://github.com/dhurlburtusa"
+  },
+  "homepage": "https://github.com/hypersoftllc/qc-react-conditionals#readme",
+  "license": "ISC",
+  "browserslist": [
+    "> 0.5%"
+  ],
+  "engines": {
+    "node": ">=4.x",
+    "npm": ">=4.x"
+  },
+  "files": [
+    "Case.jsx",
+    "Else.jsx",
+    "If.jsx",
+    "index.jsx",
+    "Then.jsx",
+    "When.jsx",
+    "lib/Case.js",
+    "lib/Else.js",
+    "lib/If.js",
+    "lib/index.js",
+    "lib/Then.js",
+    "lib/When.js"
+  ],
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/hypersoftllc/qc-react-conditionals/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hypersoftllc/qc-react-conditionals.git"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "rimraf Case.jsx Else.jsx If.jsx index.js Then.jsx When.jsx build/ coverage/ lib/",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build && node scripts/prepublish.js",
+    "postpublish": "npm run clean"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "7.2.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "4.10.0",
+    "eslint-plugin-react": "^7.4.0",
+    "fs-extra": "^3.0.1",
+    "prop-types": "^15.6.0",
+    "react": ">=16.0.0",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0"
+  }
+}

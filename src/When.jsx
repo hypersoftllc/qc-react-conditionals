@@ -1,0 +1,20 @@
+import PropTypes from 'prop-types'
+import React from 'react'
+
+
+function When(props) {
+  if (props.is) {
+    let children, typeOf
+
+    children = props.children
+    typeOf = typeof children
+    return typeOf === 'number' || typeOf === 'string' ? children : children || null
+  }
+  return null
+}
+
+When.propTypes = {
+  is: PropTypes.any,
+}
+
+export default When
