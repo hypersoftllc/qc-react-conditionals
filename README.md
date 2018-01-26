@@ -1,5 +1,10 @@
 # qc-react-conditionals
 
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
+
+[![npm badge][npm-badge-png]][package-url]
+
 A set of React components that conditionally renders its renderable children.
 These components are only compatible with React v16 or above.
 
@@ -174,3 +179,11 @@ equivalent to an `<If>`/`<Then>` combination.
   ...
 </Case>
 ```
+
+
+[downloads-image]: http://img.shields.io/npm/dm/qc-react-conditionals.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=qc-react-conditionals
+[license-image]: http://img.shields.io/npm/l/qc-react-conditionals.svg
+[license-url]: LICENSE
+[package-url]: https://npmjs.org/package/qc-react-conditionals
+[npm-badge-png]: https://nodei.co/npm/qc-react-conditionals.png?downloads=true&stars=true
