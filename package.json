@@ -51,29 +51,40 @@
     "type": "git",
     "url": "https://github.com/hypersoftllc/qc-react-conditionals.git"
   },
-  "scripts": {
-    "build": "node scripts/build.js",
-    "clean": "rimraf Case.jsx Else.jsx If.jsx index.js Then.jsx When.jsx build/ coverage/ lib/",
-    "lint": "eslint src/",
-    "prepublishOnly": "npm run build && node scripts/prepublish.js",
-    "postpublish": "npm run clean"
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ]
   },
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "rimraf Case.jsx Else.jsx If.jsx index.js Then.jsx When.jsx build/ coverage/ lib/",
+    "coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build && node scripts/prepublish.js",
+    "postpublish": "npm run clean",
+    "test": "jest --watch"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "7.2.3",
+    "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "4.10.0",
     "eslint-plugin-react": "^7.4.0",
     "fs-extra": "^3.0.1",
+    "jest": "^22.4.3",
     "prop-types": "^15.6.0",
-    "react": ">=16.0.0",
+    "react": ">=15.x",
+    "react-error-boundary": "^1.2.1",
+    "react-test-renderer": ">=15.x",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "react": ">=16.0.0"
+    "react": ">=15.x"
   }
 }
