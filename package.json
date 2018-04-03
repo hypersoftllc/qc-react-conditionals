@@ -20,14 +20,14 @@
     "name": "Danny Hurlburt",
     "url": "https://github.com/dhurlburtusa"
   },
-  "homepage": "https://github.com/hypersoftllc/qc-react-conditionals#readme",
+  "homepage": "https://github.com/hypersoftllc/qc-react-conditionals",
   "license": "ISC",
   "browserslist": [
     "> 0.5%"
   ],
   "engines": {
-    "node": ">=4.x",
-    "npm": ">=4.x"
+    "node": ">=7.4.0",
+    "npm": ">=4.0.0"
   },
   "files": [
     "Case.jsx",
@@ -64,7 +64,7 @@
     "clean": "rimraf Case.jsx Else.jsx If.jsx index.js Then.jsx When.jsx build/ coverage/ lib/",
     "coverage": "jest --coverage",
     "lint": "eslint src/",
-    "prepublishOnly": "npm run build && node scripts/prepublish.js",
+    "prepublishOnly": "npm run clean && npm run lint && npm run coverage && npm run build && node scripts/prepublish.js",
     "postpublish": "npm run clean",
     "test": "jest --watch"
   },
