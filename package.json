@@ -1,6 +1,6 @@
 {
   "name": "@qc/react-conditionals",
-  "version": "0.0.0-alpha",
+  "version": "0.0.0",
   "description": "A set of React components that conditionally renders its child components.",
   "keywords": [
     "case",
