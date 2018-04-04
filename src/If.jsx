@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PT from 'prop-types'
 import React from 'react'
 
 import Else from './Else'
@@ -30,7 +30,7 @@ function If(props) {
 
 If.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  is: PropTypes.any,
+  is: PT.any,
 }
 
 export default If
