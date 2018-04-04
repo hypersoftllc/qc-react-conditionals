@@ -6,6 +6,7 @@ import React from 'react'
 import TestRenderer from 'react-test-renderer'
 
 import Case from '../Case'
+import Else from '../Else'
 import When from '../When'
 
 const TRUE = true
@@ -158,17 +159,17 @@ describe('Case.jsx', function () {
 
       })
 
-      describe('and one `Else` child', function () {
+      xdescribe('and one `Else` child', function () {
 
-        xit('', function () {
+        it('', function () {
 
         })
 
       })
 
-      describe('and more than one `Else` child', function () {
+      xdescribe('and more than one `Else` child', function () {
 
-        xit('', function () {
+        it('', function () {
 
         })
 
@@ -243,26 +244,152 @@ describe('Case.jsx', function () {
 
       })
 
-      describe(', no `Else` children, and other non-`When` children', function () {
+      xdescribe(', no `Else` children, and other non-`When` children', function () {
 
-        xit('', function () {
-
-        })
-
-      })
-
-      describe('and one `Else` child', function () {
-
-        xit('', function () {
+        it('', function () {
 
         })
 
       })
 
-      describe('and more than one `Else` child', function () {
+      xdescribe('and one `Else` child', function () {
 
-        xit('', function () {
+        it('', function () {
 
+        })
+
+      })
+
+      xdescribe('and more than one `Else` child', function () {
+
+        it('', function () {
+
+        })
+
+      })
+
+    })
+
+    describe('with one or more `Else` child', function () {
+
+      describe('and no `When` children', function () {
+
+        it('should render the children as expected', function () {
+          let comp
+
+
+          comp = TestRenderer.create(
+            <Case>
+              First child.
+              <span>Second child.</span>
+              <Else>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Else>
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <Case>
+              First child.
+              <Else>
+                <span>Second child.</span>
+              </Else>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <Case>
+              <Else>
+                First child.
+              </Else>
+              <span>Second child.</span>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <Case>
+              First child.
+              <Else>
+                <span>Second child.</span>
+              </Else>
+              <Else>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Else>
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <Case>
+              <Else>
+                First child.
+              </Else>
+              <span>Second child.</span>
+              <Else>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Else>
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <Case>
+              <Else>
+                First child.
+              </Else>
+              <Else>
+                <span>Second child.</span>
+              </Else>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </Case>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
         })
 
       })

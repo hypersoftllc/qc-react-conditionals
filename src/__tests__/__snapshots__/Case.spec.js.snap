@@ -46,3 +46,62 @@ exports[`Case.jsx Case with one \`When\` child declared with a falsy \`is\` prop
 exports[`Case.jsx Case with one \`When\` child declared with a falsy \`is\` property should render the \`When\` component's children as \`null\` 2`] = `null`;
 
 exports[`Case.jsx Case with one \`When\` child declared with a truthy \`is\` property should render the \`When\` component's children as expected 1`] = `"I am rendered."`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 1`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 2`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 3`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 4`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 5`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 6`] = `
+Array [
+  "First child.",
+  "Third child[0].",
+  "Third child[1].",
+]
+`;

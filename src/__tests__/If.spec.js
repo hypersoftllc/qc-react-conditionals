@@ -351,9 +351,9 @@ describe('If.jsx', function () {
 
     describe('declared with a falsy `is` property', function () {
 
-      xdescribe('with no children', function () {
+      describe('with no children', function () {
 
-        xit('should render as expected', function () {
+        it('should render as expected', function () {
           let comp
 
 
@@ -375,7 +375,7 @@ describe('If.jsx', function () {
 
       describe('with no `Then` children', function () {
 
-        xit('should render the children as expected', function () {
+        it('should render the children as expected', function () {
           let comp
 
 
@@ -935,29 +935,29 @@ describe('If.jsx', function () {
           expect(comp.toJSON()).toMatchSnapshot()
         })
 
-        xdescribe('and one or more `ElseIf` children', function () {
+        // xdescribe('and one or more `ElseIf` children', function () {
 
-          it('should render all applicable children as expected', function () {
-            let comp
+        //   it('should render all applicable children as expected', function () {
+        //     let comp
 
 
-            comp = TestRenderer.create(
-              <If is={false}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
-                {
-                  [
-                    'Third child[0].',
-                    'Third child[1].',
-                  ]
-                }
-              </If>
-            )
+        //     comp = TestRenderer.create(
+        //       <If is={false}>
+        //         <Then>First child.</Then>
+        //         <span>Second child.</span>
+        //         {
+        //           [
+        //             'Third child[0].',
+        //             'Third child[1].',
+        //           ]
+        //         }
+        //       </If>
+        //     )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-          })
+        //     expect(comp.toJSON()).toMatchSnapshot()
+        //   })
 
-        })
+        // })
 
         describe('and one or more `Else` children', function () {
 
@@ -1050,35 +1050,35 @@ describe('If.jsx', function () {
 
         })
 
-        xdescribe(', one `Else` child, and one `ElseIf` child', function () {
+        // xdescribe(', one `Else` child, and one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
+        // xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+        // xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
         it('should render all children, including `Then` children, as expected', function () {
           let comp
@@ -1204,48 +1204,48 @@ describe('If.jsx', function () {
           expect(comp.toJSON()).toMatchSnapshot()
         })
 
-        xdescribe('and one or more `ElseIf` children', function () {
+        // xdescribe('and one or more `ElseIf` children', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
         describe('and one or more `Else` children', function () {
         })
 
-        xdescribe(', one `Else` child, and one `ElseIf` child', function () {
+        // xdescribe(', one `Else` child, and one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
+        // xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+        // xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
       })
 
@@ -1254,9 +1254,9 @@ describe('If.jsx', function () {
 
     describe('declared with a truthy `is` property', function () {
 
-      xdescribe('with no children', function () {
+      describe('with no children', function () {
 
-        xit('should render as expected', function () {
+        it('should render as expected', function () {
           let comp
 
 
@@ -1278,7 +1278,7 @@ describe('If.jsx', function () {
 
       describe('with no `Then` children', function () {
 
-        xit('should render the children as expected', function () {
+        it('should render the children as expected', function () {
           let comp
 
 
@@ -1746,7 +1746,7 @@ describe('If.jsx', function () {
 
         })
 
-        describe('but with one or more `Else` children', function () {
+        xdescribe('but with one or more `Else` children', function () {
         })
 
       })
@@ -1877,62 +1877,62 @@ describe('If.jsx', function () {
           expect(comp.toJSON()).toMatchSnapshot()
         })
 
-        describe('and one or more `ElseIf` children', function () {
+        // xdescribe('and one or more `ElseIf` children', function () {
 
-          it('should render applicable children as expected', function () {
-            let comp
+        //   it('should render applicable children as expected', function () {
+        //     let comp
 
 
-            comp = TestRenderer.create(
-              <If is={false}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
-                {
-                  [
-                    'Third child[0].',
-                    'Third child[1].',
-                  ]
-                }
-              </If>
-            )
+        //     comp = TestRenderer.create(
+        //       <If is={false}>
+        //         <Then>First child.</Then>
+        //         <span>Second child.</span>
+        //         {
+        //           [
+        //             'Third child[0].',
+        //             'Third child[1].',
+        //           ]
+        //         }
+        //       </If>
+        //     )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-          })
+        //     expect(comp.toJSON()).toMatchSnapshot()
+        //   })
 
-        })
+        // })
 
         describe('and one or more `Else` children', function () {
         })
 
-        describe(', one `Else` child, and one `ElseIf` child', function () {
+        // describe(', one `Else` child, and one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        describe(', one `Else` child, and more than one `ElseIf` child', function () {
+        // describe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+        // describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
 
         it('should render all children, including `Then` children, as expected', function () {
@@ -2059,47 +2059,73 @@ describe('If.jsx', function () {
           expect(comp.toJSON()).toMatchSnapshot()
         })
 
-        describe('and one or more `ElseIf` children', function () {
+        // describe('and one or more `ElseIf` children', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
         describe('and one or more `Else` children', function () {
         })
 
-        describe(', one `Else` child, and one `ElseIf` child', function () {
+        // describe(', one `Else` child, and one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        describe(', one `Else` child, and more than one `ElseIf` child', function () {
+        // describe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
-        })
+        // })
 
-        describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+        // describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
 
-          describe('declared with a falsy `is` property', function () {
-          })
+        //   describe('declared with a falsy `is` property', function () {
+        //   })
 
-          describe('declared with a truthy `is` property', function () {
-          })
+        //   describe('declared with a truthy `is` property', function () {
+        //   })
 
+        // })
+
+      })
+
+      describe('with one or more `Else` children', function () {
+
+        it('should render the children as expected', function () {
+          let comp
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <Else>
+                <span>Second child.</span>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Else>
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
         })
 
       })

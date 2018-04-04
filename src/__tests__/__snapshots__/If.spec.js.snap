@@ -113,7 +113,7 @@ Array [
   "First child.",
   <span>
     Second child.
-</span>,
+  </span>,
   "Third child[0].",
   "Third child[1].",
 ]
@@ -210,16 +210,6 @@ Array [
   <span>
     Last child.
   </span>,
-]
-`;
-
-exports[`If.jsx If declared with a falsy \`is\` property with one or more \`Then\` children and one or more \`ElseIf\` children should render all applicable children as expected 1`] = `
-Array [
-  <span>
-    Second child.
-</span>,
-  "Third child[0].",
-  "Third child[1].",
 ]
 `;
 
@@ -349,18 +339,7 @@ Array [
   "First child.",
   <span>
     Second child.
-</span>,
-  "Third child[0].",
-  "Third child[1].",
-]
-`;
-
-exports[`If.jsx If declared with a truthy \`is\` property with no \`Then\` children should render the children as expected 2`] = `
-Array [
-  "First child.",
-  <span>
-    Second child.
-</span>,
+  </span>,
   "Third child[0].",
   "Third child[1].",
 ]
@@ -370,15 +349,7 @@ exports[`If.jsx If declared with a truthy \`is\` property with no children shoul
 
 exports[`If.jsx If declared with a truthy \`is\` property with no children should render as expected 2`] = `null`;
 
-exports[`If.jsx If declared with a truthy \`is\` property with one or more \`Then\` children and one or more \`ElseIf\` children should render applicable children as expected 1`] = `
-Array [
-  <span>
-    Second child.
-  </span>,
-  "Third child[0].",
-  "Third child[1].",
-]
-`;
+exports[`If.jsx If declared with a truthy \`is\` property with one or more \`Else\` children should render the children as expected 1`] = `"First child."`;
 
 exports[`If.jsx If declared with a truthy \`is\` property with one or more \`Then\` children should render all children, including \`Then\` children, as expected 1`] = `
 Array [
