@@ -1,24 +1,25 @@
-# qc-react-conditionals
+# @qc/react-conditionals
 
+[![Build Status][travis-svg]][travis-url]
+[![Coverage Status][coverage-image]][coverage-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
 [![npm badge][npm-badge-png]][package-url]
 
 A set of React components that conditionally renders its renderable children.
-These components are only compatible with React v16 or above.
 
 
 ## Installation
 
 ```sh
-npm install --save qc-react-conditionals
+npm install --save @qc/react-conditionals
 ```
 
 or
 
 ```sh
-yarn add qc-react-conditionals
+yarn add @qc/react-conditionals
 ```
 
 
@@ -27,7 +28,7 @@ yarn add qc-react-conditionals
 ```jsx
 import React from 'react'
 
-import { Case, Else, If, Then, When } from 'qc-react-conditionals'
+import { Case, Else, If, Then, When } from '@qc/react-conditionals'
 
 
 function SomeComponent(props) {
@@ -61,8 +62,8 @@ function SomeComponent(props) {
 
 ## &lt;If>
 
-`<If>` may take as many `<Then>` or `<Else>` components as you like.  The
-order of which does not matter.
+`<If>` may take as many `<Then>` or `<Else>` components as you like.  The order
+of which does not matter.
 
 ```jsx
 <If is={status === 'active'}>
@@ -92,9 +93,9 @@ order of which does not matter.
 
 ## &lt;Case>
 
-`<Case>` may take as many `<When>` components you like.  It may optionally
-take one `<Else>` component.  The order of the `<When>` and `<Else>`
-components in a `<Case>` is important.  `<When>`s must come before the `<Else>`.
+`<Case>` may take as many `<When>` components you like.  It may optionally take
+one `<Else>` component.  The order of the `<When>` and `<Else>` components in a
+`<Case>` is important.  `<When>`s must come before the `<Else>`.
 
 ```jsx
 <Case>
@@ -181,9 +182,13 @@ equivalent to an `<If>`/`<Then>` combination.
 ```
 
 
+[coverage-image]: https://coveralls.io/repos/github/hypersoftllc/qc-react-conditionals/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/hypersoftllc/qc-react-conditionals?branch=master
 [downloads-image]: http://img.shields.io/npm/dm/qc-react-conditionals.svg
 [downloads-url]: http://npm-stat.com/charts.html?package=qc-react-conditionals
 [license-image]: http://img.shields.io/npm/l/qc-react-conditionals.svg
 [license-url]: LICENSE
 [package-url]: https://npmjs.org/package/qc-react-conditionals
 [npm-badge-png]: https://nodei.co/npm/qc-react-conditionals.png?downloads=true&stars=true
+[travis-svg]: https://travis-ci.org/hypersoftllc/qc-react-conditionals.svg?branch=master
+[travis-url]: https://travis-ci.org/hypersoftllc/qc-react-conditionals

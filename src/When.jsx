@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PT from 'prop-types'
 import React from 'react'
 
 
@@ -14,7 +14,8 @@ function When(props) {
 }
 
 When.propTypes = {
-  is: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  is: PT.any,
 }
 
 export default When

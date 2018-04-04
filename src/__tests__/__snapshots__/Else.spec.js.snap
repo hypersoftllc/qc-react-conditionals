@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Else.jsx Else should render a single \`Date\` child as \`.toValue().toString()\` 1`] = `"946684800000"`;
+
+exports[`Else.jsx Else should render a single \`Date\` child as \`.toValue().toString()\` 2`] = `
+<div>
+  946684800000
+</div>
+`;
+
+exports[`Else.jsx Else should render a single \`NaN\` child as "NaN" 1`] = `"NaN"`;
+
+exports[`Else.jsx Else should render a single \`NaN\` child as "NaN" 2`] = `"NaN"`;
+
+exports[`Else.jsx Else should render a single \`NaN\` child as "NaN" 3`] = `
+<div>
+  NaN
+</div>
+`;
+
+exports[`Else.jsx Else should render a single \`false\` child as \`null\` 1`] = `null`;
+
+exports[`Else.jsx Else should render a single \`false\` child as \`null\` 2`] = `null`;
+
+exports[`Else.jsx Else should render a single \`false\` child as \`null\` 3`] = `<div />`;
+
+exports[`Else.jsx Else should render a single \`false\` child as \`null\` 4`] = `<div />`;
+
+exports[`Else.jsx Else should render a single \`true\` child as \`null\` 1`] = `null`;
+
+exports[`Else.jsx Else should render a single \`true\` child as \`null\` 2`] = `null`;
+
+exports[`Else.jsx Else should render a single \`true\` child as \`null\` 3`] = `<div />`;
+
+exports[`Else.jsx Else should render a single \`true\` child as \`null\` 4`] = `<div />`;
+
+exports[`Else.jsx Else should render a single \`undefined\` child as \`null\` 1`] = `null`;
+
+exports[`Else.jsx Else should render a single \`undefined\` child as \`null\` 2`] = `null`;
+
+exports[`Else.jsx Else should render a single \`undefined\` child as \`null\` 3`] = `<div />`;
+
+exports[`Else.jsx Else should render a single empty string child as "" 1`] = `""`;
+
+exports[`Else.jsx Else should render a single empty string child as "" 2`] = `""`;
+
+exports[`Else.jsx Else should render a single empty string child as "" 3`] = `
+<div>
+  
+</div>
+`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 1`] = `"0"`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 2`] = `"0"`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 3`] = `"non-empty"`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 4`] = `"non-empty"`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 5`] = `"non-empty"`;
+
+exports[`Else.jsx Else should render a single non-empty string child as its string value 6`] = `"non-empty"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 1`] = `"-Infinity"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 2`] = `"-1.7976931348623157e+308"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 3`] = `"-9007199254740991"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 4`] = `"-42"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 5`] = `"-1"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 6`] = `"1"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 7`] = `"42"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 8`] = `"9007199254740991"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 9`] = `"1.7976931348623157e+308"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 10`] = `"Infinity"`;
+
+exports[`Else.jsx Else should render a single non-zero number child as its string value 11`] = `
+<div>
+  42
+</div>
+`;
+
+exports[`Else.jsx Else should render a single zero child as \`0\` 1`] = `"0"`;
+
+exports[`Else.jsx Else should render a single zero child as \`0\` 2`] = `"0"`;
+
+exports[`Else.jsx Else should render a single zero child as \`0\` 3`] = `
+<div>
+  0
+</div>
+`;
+
+exports[`Else.jsx Else should render an array child as expected based on type 1`] = `
+Array [
+  "Hello!",
+  " ",
+  "Today I am ",
+  "42",
+  " years old!",
+]
+`;
+
+exports[`Else.jsx Else should render an array child as expected based on type 2`] = `
+<div>
+  Hello!
+   
+  Today I am 
+  42
+   years old!
+</div>
+`;
+
+exports[`Else.jsx Else should render an empty array child as if there were no children 1`] = `null`;
+
+exports[`Else.jsx Else should render an empty array child as if there were no children 2`] = `<div />`;
+
+exports[`Else.jsx Else should render with no props and no children 1`] = `null`;
+
+exports[`Else.jsx Else should throw with a single \`Error\` child 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#C00",
+      "boxSizing": "border-box",
+      "color": "#FFF",
+      "cursor": "help",
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
+      "maxHeight": "100vh",
+      "maxWidth": "100vw",
+      "textAlign": "center",
+      "width": "100%",
+    }
+  }
+  title="Invariant Violation: Objects are not valid as a React child (found: Error: Oh oh!). If you meant to render a collection of children, use an array instead.
+    in Else
+    in ErrorBoundary
+
+This is located at:
+    in Else
+    in ErrorBoundary"
+>
+  <svg
+    preserveAspectRatio="xMidYMid"
+    style={
+      Object {
+        "fill": "currentColor",
+        "flex": "1 1 auto",
+      }
+    }
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,
+        12M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,
+        12M15.5,8C16.3,8 17,8.7 17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,
+        9.5C14,8.7 14.7,8 15.5,8M10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,
+        8.7 7.7,8 8.5,8C9.3,8 10,8.7 10,9.5M12,14C13.75,14 15.29,14.72 16.19,
+        15.81L14.77,17.23C14.32,16.5 13.25,16 12,16C10.75,16 9.68,16.5 9.23,
+        17.23L7.81,15.81C8.71,14.72 10.25,14 12,14Z"
+    />
+  </svg>
+</div>
+`;

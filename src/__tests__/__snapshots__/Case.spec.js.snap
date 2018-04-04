@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Case.jsx Case should render with no props and no children 1`] = `null`;
+
+exports[`Case.jsx Case with more than one \`When\` child where at least one \`When\` child with a truthy \`is\` property should render only the first truthy \`When\`'s children as expected 1`] = `"I am rendered."`;
+
+exports[`Case.jsx Case with more than one \`When\` child where at least one \`When\` child with a truthy \`is\` property should render only the first truthy \`When\`'s children as expected 2`] = `"I am rendered."`;
+
+exports[`Case.jsx Case with more than one \`When\` child where at least one \`When\` child with a truthy \`is\` property should render only the first truthy \`When\`'s children as expected 3`] = `"I am rendered."`;
+
+exports[`Case.jsx Case with no \`When\` or \`Else\` children should render the children as expected 1`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one \`When\` child , no \`Else\` children, and other non-\`When\` children declared with a falsy \`is\` property should render the \`When\` component's children as \`null\` and the other non-\`When\` children as expected 1`] = `
+Array [
+  "I am always rendered.",
+  "I am also rendered.",
+]
+`;
+
+exports[`Case.jsx Case with one \`When\` child , no \`Else\` children, and other non-\`When\` children declared with a falsy \`is\` property should render the \`When\` component's children as \`null\` and the other non-\`When\` children as expected 2`] = `
+Array [
+  "I am always rendered.",
+  "I am also rendered.",
+]
+`;
+
+exports[`Case.jsx Case with one \`When\` child , no \`Else\` children, and other non-\`When\` children declared with a truthy \`is\` property should render the \`When\` component's children as expected and the other non-\`When\` children as expected 1`] = `
+Array [
+  "I am always rendered.",
+  "I am rendered.",
+  "I am also rendered.",
+]
+`;
+
+exports[`Case.jsx Case with one \`When\` child declared with a falsy \`is\` property should render the \`When\` component's children as \`null\` 1`] = `null`;
+
+exports[`Case.jsx Case with one \`When\` child declared with a falsy \`is\` property should render the \`When\` component's children as \`null\` 2`] = `null`;
+
+exports[`Case.jsx Case with one \`When\` child declared with a truthy \`is\` property should render the \`When\` component's children as expected 1`] = `"I am rendered."`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 1`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 2`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 3`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+  "Third child[0].",
+  "Third child[1].",
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 4`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 5`] = `
+Array [
+  "First child.",
+  <span>
+    Second child.
+  </span>,
+]
+`;
+
+exports[`Case.jsx Case with one or more \`Else\` child and no \`When\` children should render the children as expected 6`] = `
+Array [
+  "First child.",
+  "Third child[0].",
+  "Third child[1].",
+]
+`;

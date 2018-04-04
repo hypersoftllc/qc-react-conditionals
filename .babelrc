@@ -1,6 +1,30 @@
 {
-  "presets": [
-    "env",
-    "react"
-  ]
+  "env": {
+    "cjs": {
+      "ignore": [
+        "__tests__",
+      ],
+      "presets": [
+        "env",
+        "react",
+      ],
+    },
+    "es": {
+      "ignore": [
+        "__tests__",
+      ],
+      "presets": [
+        ["env", {
+          "modules": false,
+        }],
+        "react",
+      ],
+    },
+    "test": {
+      "presets": [
+        "env",
+        "react",
+      ],
+    },
+  },
 }
