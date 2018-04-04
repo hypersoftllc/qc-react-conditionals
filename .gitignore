@@ -7,17 +7,17 @@
 /coverage
 
 # production
-/build
-/lib
-/Case.jsx
-/Else.jsx
-/If.jsx
-/index.js
-/Then.jsx
-/When.jsx
+/build/
+/dist/
+/es/
+/lib/
+/umd/
 
 # misc
+.coveralls.yml
+
 .DS_Store
+
 .env.local
 .env.development.local
 .env.test.local

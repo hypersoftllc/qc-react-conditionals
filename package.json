@@ -30,20 +30,14 @@
     "npm": ">=4.0.0"
   },
   "files": [
-    "Case.jsx",
-    "Else.jsx",
-    "If.jsx",
-    "index.jsx",
-    "Then.jsx",
-    "When.jsx",
-    "lib/Case.js",
-    "lib/Else.js",
-    "lib/If.js",
-    "lib/index.js",
-    "lib/Then.js",
-    "lib/When.js"
+    "dist/",
+    "es/",
+    "lib/",
+    "src/",
+    "umd"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "bugs": {
     "url": "https://github.com/hypersoftllc/qc-react-conditionals/issues"
   },
@@ -60,20 +54,27 @@
     "access": "public"
   },
   "scripts": {
-    "build": "node scripts/build.js",
-    "clean": "rimraf Case.jsx Else.jsx If.jsx index.js Then.jsx When.jsx build/ coverage/ lib/",
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src -d lib/",
+    "build:es": "cross-env BABEL_ENV=es babel src -d es/",
+    "clean": "rimraf build/ coverage/ dist/ es/ lib/ umd/",
     "coverage": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src/",
     "prepublishOnly": "npm run clean && npm run lint && npm run coverage && npm run build && node scripts/prepublish.js",
     "postpublish": "npm run clean",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "travisci": "npm run coverage"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.4",
     "eslint": "4.10.0",
     "eslint-plugin-react": "^7.4.0",
     "fs-extra": "^3.0.1",
@@ -85,6 +86,7 @@
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
+    "prop-types": ">=15.x",
     "react": ">=15.x"
   }
 }
