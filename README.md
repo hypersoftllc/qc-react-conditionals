@@ -68,25 +68,23 @@ of which does not matter.
 ```jsx
 <If is={status === 'active'}>
   <Then>
-    This is rendered when <code>If</code>'s condition is
-    truthy.
+    This is rendered when If's condition is truthy.
   </Then>
   <Else>
-    This is rendered when <code>If</code>'s condition is not
+    This is rendered when If's condition is not
     truthy.
   </Else>
-  This will be rendered regardless of <code>If</code>'s
-  condition.  That is, any renderable children outside of
-  <code>Then</code>s or <code>Else</code>s will be rendered.
+  This will be rendered regardless of If's condition.
+  That is, any renderable children outside of Thens or
+  Elses will be rendered.
   <Else>
-    This will also be rendered when condition is
-    <strong>NOT</strong> true.  That is, all immediate
-    child <code>Else</code> components will be rendered
-    when the condition is not true.
+    This will also be rendered when condition is NOT truthy.
+    That is, all immediate child Else components will be
+    rendered when the condition is not true.
   </Else>
   <Then>
-    This will also be rendered when <code>If</code>'s
-    condition is truthy.
+    This will also be rendered when If's condition is
+    truthy.
   </Then>
 </If>
 ```
@@ -103,9 +101,8 @@ one `<Else>` component.  The order of the `<When>` and `<Else>` components in a
     <span>The status is active!</span>
   </When>
   <When is={status === 'active'}>
-    This will <strong>not</strong> be rendered.  Only the first
-    <code>When</code> component with a truty condition will be
-    rendered.
+    This will NOT be rendered.  Only the first When
+    component with a truty condition will be rendered.
   </When>
   <When is={status === 'pending'}>
     <span>The status is pending!</span>
@@ -173,13 +170,30 @@ equivalent to an `<If>`/`<Then>` combination.
 <Case>
   <Else>
     This is not guaranteed to be rendered or not since it
-    comes before any <code>&lt;When></code> components.  In
-    fact, it may cause any successive <code>&lt;When></code>
-    components to not render.
+    comes before any &lt;When> components.  In fact, it
+    may cause any successive &lt;When> components to not
+    render.
   </Else>
   ...
 </Case>
 ```
+
+
+## Other Packages from [QC]
+
+* [@qc/react-block][qc-react-block]
+* [@qc/react-layer][qc-react-layer]
+* [@qc/react-page][qc-react-page]
+
+
+## Maintainers
+
+- [Danny Hurlburt](https://github.com/dhurlburtusa)
+
+
+## License
+
+ISC
 
 
 [coverage-image]: https://coveralls.io/repos/github/hypersoftllc/qc-react-conditionals/badge.svg?branch=master
@@ -190,5 +204,9 @@ equivalent to an `<If>`/`<Then>` combination.
 [license-url]: LICENSE
 [package-url]: https://npmjs.org/package/qc-react-conditionals
 [npm-badge-png]: https://nodei.co/npm/qc-react-conditionals.png?downloads=true&stars=true
+[qc]: https://www.npmjs.com/~qc
+[qc-react-block]: https://www.npmjs.com/package/@qc/react-block
+[qc-react-layer]: https://www.npmjs.com/package/@qc/react-layer
+[qc-react-page]: https://www.npmjs.com/package/@qc/react-page
 [travis-svg]: https://travis-ci.org/hypersoftllc/qc-react-conditionals.svg?branch=master
 [travis-url]: https://travis-ci.org/hypersoftllc/qc-react-conditionals
