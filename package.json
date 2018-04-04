@@ -62,7 +62,6 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src/",
     "prepublishOnly": "npm run clean && npm run lint && npm run coverage && npm run build",
-    "postpublish": "npm run clean",
     "test": "jest --watch",
     "travisci": "npm run coverage"
   },
