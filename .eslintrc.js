@@ -129,7 +129,7 @@ module.exports = {
      * Stylistic Issues
      */
     "array-bracket-spacing": [2, "never"],
-    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
     "camelcase": [2, {"properties": "never"}],
     "comma-spacing": 2,
     "comma-style": 2,
@@ -209,7 +209,7 @@ module.exports = {
      */
     "max-depth": [1, 3],
     "max-params": [1, 5],
-    "max-len": [1, 120, 4, {"ignoreComments": true, "ignoreUrls": true}],
+    "max-len": [1, {"code": 120, "ignoreComments": true, "ignoreUrls": true, "tabWidth": 4}],
     "max-statements": 0,
     "no-bitwise": 0,
     "no-plusplus": 0,

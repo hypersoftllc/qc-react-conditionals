@@ -1,4 +1,5 @@
-/* eslint-env jest */
+/* eslint-env jest, node */
+/* eslint max-len: "off" */
 /* eslint padded-blocks: "off" */
 
 import React from 'react'
@@ -106,7 +107,7 @@ describe('Else.jsx', function () {
     })
 
     it('should render a single non-zero number child as its string value', function () {
-      let comp, tree
+      let comp
 
 
       comp = TestRenderer.create(
@@ -223,7 +224,7 @@ describe('Else.jsx', function () {
 
 
       comp = TestRenderer.create(
-        <Else>{ parseInt('asdf') }</Else>
+        <Else>{ parseInt('asdf', 10) }</Else>
       )
 
       expect(comp.toJSON()).toMatchSnapshot()
@@ -237,7 +238,7 @@ describe('Else.jsx', function () {
     })
 
     it('should render a single non-empty string child as its string value', function () {
-      let comp, tree
+      let comp
 
 
       comp = TestRenderer.create(
@@ -348,7 +349,8 @@ describe('Else.jsx', function () {
 
         expect(onError).toHaveBeenCalled()
         expect(comp.toJSON()).toMatchSnapshot()
-      } finally {
+      }
+      finally {
         console.error = consoleErrorOriginal
       }
     })

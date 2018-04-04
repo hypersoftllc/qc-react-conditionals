@@ -14,6 +14,7 @@ function When(props) {
 }
 
 When.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   is: PropTypes.any,
 }
 

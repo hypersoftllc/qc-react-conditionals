@@ -1,4 +1,5 @@
-/* eslint-env jest */
+/* eslint-env jest, node */
+/* eslint max-len: "off" */
 /* eslint padded-blocks: "off" */
 
 import React from 'react'
@@ -103,7 +104,6 @@ describe('Case.jsx', function () {
 
         describe('declared with a falsy `is` property', function () {
 
-          // eslint-disable-next-line max-len
           it('should render the `When` component\'s children as `null` and the other non-`When` children as expected', function () {
             let comp
 
@@ -138,7 +138,6 @@ describe('Case.jsx', function () {
 
         describe('declared with a truthy `is` property', function () {
 
-          // eslint-disable-next-line max-len
           it('should render the `When` component\'s children as expected and the other non-`When` children as expected', function () {
             let comp
 

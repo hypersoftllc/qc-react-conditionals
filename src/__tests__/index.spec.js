@@ -1,4 +1,5 @@
-/* eslint-env jest */
+/* eslint-env jest, node */
+/* eslint max-len: "off" */
 /* eslint padded-blocks: "off" */
 
 import React from 'react'

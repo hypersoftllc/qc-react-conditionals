@@ -1,3 +1,4 @@
+/* eslint-env node */
 console.log(`Copying all the contents of /build to package root.`)
 
 const fse = require('fs-extra')

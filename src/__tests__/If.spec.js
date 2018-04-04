@@ -1,14 +1,17 @@
-/* eslint-env jest */
+/* eslint-env jest, node */
+/* eslint max-len: "off" */
+/* eslint max-nested-callbacks: "off" */
 /* eslint padded-blocks: "off" */
 
 import React from 'react'
-import ErrorBoundary from 'react-error-boundary'
 import TestRenderer from 'react-test-renderer'
 
 import Else from '../Else'
 // import ElseIf from '../ElseIf'
 import If from '../If'
 import Then from '../Then'
+
+const TRUE = true
 
 /*
 F, T: []
@@ -383,7 +386,7 @@ describe('If.jsx', function () {
               {
                 [
                   'Third child[0].',
-                  'Third child[1].'
+                  'Third child[1].',
                 ]
               }
             </If>
@@ -394,321 +397,321 @@ describe('If.jsx', function () {
 
         xdescribe('but with one or more `ElseIf` children', function () {
 
-          xit('should render all applicable children as expected', function () {
-            let comp
+          // xit('should render all applicable children as expected', function () {
+          //   let comp
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={false}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-          })
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={false}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+          // })
 
           xdescribe('and with one or more `Else` children', function () {
 
@@ -819,7 +822,7 @@ describe('If.jsx', function () {
               {
                 [
                   'Third child[0].',
-                  'Third child[1].'
+                  'Third child[1].',
                 ]
               }
             </If>
@@ -835,7 +838,7 @@ describe('If.jsx', function () {
               {
                 [
                   'Third child[0].',
-                  'Third child[1].'
+                  'Third child[1].',
                 ]
               }
             </If>
@@ -852,7 +855,7 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </Then>
@@ -869,7 +872,7 @@ describe('If.jsx', function () {
               {
                 [
                   'Third child[0].',
-                  'Third child[1].'
+                  'Third child[1].',
                 ]
               }
             </If>
@@ -886,7 +889,7 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </Then>
@@ -904,7 +907,7 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </Then>
@@ -922,7 +925,7 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </Then>
@@ -945,7 +948,7 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </If>
@@ -977,17 +980,6 @@ describe('If.jsx', function () {
             )
 
             expect(comp.toJSON()).toMatchSnapshot()
-
-
-
-
-
-
-
-
-
-
-
 
 
             comp = TestRenderer.create(
@@ -1088,184 +1080,172 @@ describe('If.jsx', function () {
 
         })
 
+        it('should render all children, including `Then` children, as expected', function () {
+          let comp
 
 
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <Then><span>Second child.</span></Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-
-
-
-
-
-
-          it('should render all children, including `Then` children, as expected', function () {
-            let comp
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <span>Second child.</span>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <Then><span>Second child.</span></Then>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <Then><span>Second child.</span></Then>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              <Then>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
+        })
 
+        xdescribe('and one or more `ElseIf` children', function () {
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          describe('declared with a falsy `is` property', function () {
           })
 
-          xdescribe('and one or more `ElseIf` children', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
 
-          describe('and one or more `Else` children', function () {
+        })
+
+        describe('and one or more `Else` children', function () {
+        })
+
+        xdescribe(', one `Else` child, and one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
           })
 
-          xdescribe(', one `Else` child, and one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
 
-          xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
+        })
 
-            describe('declared with a falsy `is` property', function () {
-            })
+        xdescribe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a falsy `is` property', function () {
           })
 
-          xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
+
+        })
+
+        xdescribe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
+          })
+
+          describe('declared with a truthy `is` property', function () {
+          })
+
+        })
 
       })
 
@@ -1288,7 +1268,7 @@ describe('If.jsx', function () {
 
 
           comp = TestRenderer.create(
-            <If is={true}/>
+            <If is={TRUE}/>
           )
 
           expect(comp.toJSON()).toMatchSnapshot()
@@ -1303,13 +1283,13 @@ describe('If.jsx', function () {
 
 
           comp = TestRenderer.create(
-            <If is={true}>
+            <If is={TRUE}>
               First child.
               <span>Second child.</span>
               {
                 [
                   'Third child[0].',
-                  'Third child[1].'
+                  'Third child[1].',
                 ]
               }
             </If>
@@ -1320,321 +1300,321 @@ describe('If.jsx', function () {
 
         xdescribe('but with one or more `ElseIf` children', function () {
 
-          xit('should render all applicable children as expected', function () {
-            let comp
+          // xit('should render all applicable children as expected', function () {
+          //   let comp
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // One ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <span>Last child.</span>
-              </If>
-            )
+          //   // One ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          //   expect(comp.toJSON()).toMatchSnapshot()
 
 
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <span>First child.</span>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <span>First child.</span>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <span>Second child.</span>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <span>Second child.</span>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Two ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <span>Last child.</span>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={false}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={false}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={false}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            // Three ElseIfs:
-            comp = TestRenderer.create(
-              <If is={true}>
-                <ElseIf is={true}><span>First child.</span></ElseIf>
-                <ElseIf is={true}><span>Second child.</span></ElseIf>
-                <ElseIf is={true}><span>Last child.</span></ElseIf>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-          })
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Two ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <span>Last child.</span>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={false}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={false}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+
+
+          //   // Three ElseIfs:
+          //   comp = TestRenderer.create(
+          //     <If is={TRUE}>
+          //       <ElseIf is={TRUE}><span>First child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Second child.</span></ElseIf>
+          //       <ElseIf is={TRUE}><span>Last child.</span></ElseIf>
+          //     </If>
+          //   )
+
+          //   expect(comp.toJSON()).toMatchSnapshot()
+          // })
 
           xdescribe('and with one or more `Else` children', function () {
 
@@ -1773,7 +1753,133 @@ describe('If.jsx', function () {
 
       describe('with one or more `Then` children', function () {
 
-          it('should render all non-`Then` children as expected', function () {
+        it('should render all non-`Then` children as expected', function () {
+          let comp
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              First child.
+              <Then>Second child.</Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              First child.
+              <span>Second child.</span>
+              <Then>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Then>
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              <Then>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Then>
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              First child.
+              <Then><span>Second child.</span></Then>
+              <Then>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Then>
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={false}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              <Then>
+                {
+                  [
+                    'Third child[0].',
+                    'Third child[1].',
+                  ]
+                }
+              </Then>
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+        })
+
+        describe('and one or more `ElseIf` children', function () {
+
+          it('should render applicable children as expected', function () {
             let comp
 
 
@@ -1784,354 +1890,217 @@ describe('If.jsx', function () {
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
               </If>
             )
 
             expect(comp.toJSON()).toMatchSnapshot()
+          })
+
+        })
+
+        describe('and one or more `Else` children', function () {
+        })
+
+        describe(', one `Else` child, and one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
+          })
+
+          describe('declared with a truthy `is` property', function () {
+          })
+
+        })
+
+        describe(', one `Else` child, and more than one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
+          })
+
+          describe('declared with a truthy `is` property', function () {
+          })
+
+        })
+
+        describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
+          })
+
+          describe('declared with a truthy `is` property', function () {
+          })
+
+        })
 
 
-            comp = TestRenderer.create(
-              <If is={false}>
-                First child.
-                <Then>Second child.</Then>
+        it('should render all children, including `Then` children, as expected', function () {
+          let comp
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <Then><span>Second child.</span></Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <span>Second child.</span>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={false}>
-                First child.
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={false}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              {
+                [
+                  'Third child[0].',
+                  'Third child[1].',
+                ]
+              }
+            </If>
+          )
+
+          expect(comp.toJSON()).toMatchSnapshot()
+
+
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <span>Second child.</span>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={false}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={false}>
-                First child.
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={false}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-          })
-
-          describe('and one or more `ElseIf` children', function () {
-
-            it('should render applicable children as expected', function () {
-              let comp
-
-
-              comp = TestRenderer.create(
-                <If is={false}>
-                  <Then>First child.</Then>
-                  <span>Second child.</span>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </If>
-              )
-
-              expect(comp.toJSON()).toMatchSnapshot()
-            })
-
-          })
-
-          describe('and one or more `Else` children', function () {
-          })
-
-          describe(', one `Else` child, and one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
-          })
-
-          describe(', one `Else` child, and more than one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
-          })
-
-          describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
-          })
-
-
-
-
-
-
-
-
-
-
-
-
-
-          it('should render all children, including `Then` children, as expected', function () {
-            let comp
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              First child.
+              <Then><span>Second child.</span></Then>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
 
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <Then><span>Second child.</span></Then>
+          comp = TestRenderer.create(
+            <If is={TRUE}>
+              <Then>First child.</Then>
+              <Then><span>Second child.</span></Then>
+              <Then>
                 {
                   [
                     'Third child[0].',
-                    'Third child[1].'
+                    'Third child[1].',
                   ]
                 }
-              </If>
-            )
+              </Then>
+            </If>
+          )
 
-            expect(comp.toJSON()).toMatchSnapshot()
+          expect(comp.toJSON()).toMatchSnapshot()
+        })
 
+        describe('and one or more `ElseIf` children', function () {
 
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
-                {
-                  [
-                    'Third child[0].',
-                    'Third child[1].'
-                  ]
-                }
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <span>Second child.</span>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                First child.
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
-
-
-            comp = TestRenderer.create(
-              <If is={true}>
-                <Then>First child.</Then>
-                <Then><span>Second child.</span></Then>
-                <Then>
-                  {
-                    [
-                      'Third child[0].',
-                      'Third child[1].'
-                    ]
-                  }
-                </Then>
-              </If>
-            )
-
-            expect(comp.toJSON()).toMatchSnapshot()
+          describe('declared with a falsy `is` property', function () {
           })
 
-          describe('and one or more `ElseIf` children', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
 
-          describe('and one or more `Else` children', function () {
+        })
+
+        describe('and one or more `Else` children', function () {
+        })
+
+        describe(', one `Else` child, and one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
           })
 
-          describe(', one `Else` child, and one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
 
-          describe(', one `Else` child, and more than one `ElseIf` child', function () {
+        })
 
-            describe('declared with a falsy `is` property', function () {
-            })
+        describe(', one `Else` child, and more than one `ElseIf` child', function () {
 
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a falsy `is` property', function () {
           })
 
-          describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
-
-            describe('declared with a falsy `is` property', function () {
-            })
-
-            describe('declared with a truthy `is` property', function () {
-            })
-
+          describe('declared with a truthy `is` property', function () {
           })
+
+        })
+
+        describe(', more than one `Else` child, and more than one `ElseIf` child', function () {
+
+          describe('declared with a falsy `is` property', function () {
+          })
+
+          describe('declared with a truthy `is` property', function () {
+          })
+
+        })
 
       })
 
@@ -2202,7 +2171,7 @@ describe('If.jsx', function () {
 
 
     //       comp = TestRenderer.create(
-    //         <If is={true}>
+    //         <If is={TRUE}>
     //           First child.
     //           <span>Second child.</span>
     //           {

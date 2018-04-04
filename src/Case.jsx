@@ -5,8 +5,8 @@ import When from './When'
 
 
 export default function Case(props) {
-  let whenOrElse = false,
-      children
+  let whenOrElse = false
+  let children
 
   children = React.Children.map(props.children, (child) => {
     if (child.type === When) {

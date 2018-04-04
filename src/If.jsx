@@ -6,8 +6,8 @@ import Then from './Then'
 
 
 function If(props) {
-  let children = props.children,
-      is = props.is
+  let children = props.children
+  let is = props.is
 
   children = React.Children.map(children, function (child) {
     let item = child
@@ -29,6 +29,7 @@ function If(props) {
 }
 
 If.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   is: PropTypes.any,
 }
 
